@@ -1,3 +1,7 @@
+<?php
+$error=filter_input(INPUT_GET, "error", FILTER_SANITIZE_STRING);
+$file=filter_input(INPUT_GET, "file", FILTER_SANITIZE_STRING);
+?>
 <!DOCTYPE html>
 <html>
 
@@ -8,11 +12,16 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
     <h2>Choisissez la base de type csv pour votre liste de personnes</h2>
 
-    <form method="POST" action="??">
-
+<body>
+    <?php
+        if($error=="ext"){
+            echo "<span class='alert alert-danger'>L'extenssion du fichier que vous avez fournis ($file) n'est pas valide</span>";
+        }
+    ?>
+    <form method="POST" action="scripts/fileImport.php" enctype="multipart/form-data">
+        <input type="hidden" name="MAX_FILE_SIZE" value="52428800" />
         <input type="file" id="FichierCSV" name="CSV" accept=".csv">
         <button type="submit" value="Submit">Submit</button>
     </form>
