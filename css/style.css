@@ -1,0 +1,14 @@
+#index form {
+    position: absolute;
+    top: 50%;
+    left: 40%;
+}
+
+#index a {
+    color: white;
+}
+
+#index a:hover {
+    text-decoration: none;
+    color: white;
+}

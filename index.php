@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Slip Up</title>
     <meta charset="uft-8">
     <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
     <div class="container">
-        <div class="row ">
-            <!-- formulaire  -->
+        <div class="row row justify-content-center" id="index">
 			<form method="POST" action="#">
-            <button><a href="ImportBase.html">importation de base</a></button>
-            <button><a href="FaitMain.html">Ajouter à la main</a></button>           
+                <button class="btn btn-dark"><a href="ImportBase.php">Importation de base</a></button>
+                <button class="btn btn-dark"><a href="FaitMain.php">Ajouter à la main</a></button>           
             </form>
-        </div>
-        <div class="row ">
-            <!-- Affichage groupe  -->
         </div>
     </div>
 </body>
+
 </html>
