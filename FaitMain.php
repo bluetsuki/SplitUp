@@ -3,8 +3,8 @@
     <head>
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <style> textarea{ resize:none;}</style>
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
         <h2>Ecrivez les noms des personnes que vous voulez (avec des points virgules)</h2>
