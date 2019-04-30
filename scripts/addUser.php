@@ -17,8 +17,7 @@ session_start();
 			 <?php 
 				$file = fopen($_SESSION["file"], "r+");
 				$readfile=file_get_contents($_SESSION["file"]);
-				//$readfile = fread($file,filesize($_SESSION["file"]));
-			var_dump($readfile);
+			echo($readfile);
 			 ?>
             </textarea>
 
