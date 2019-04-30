@@ -12,7 +12,7 @@ session_start();
     <body>
         <h2>Ajouter des personnes si vous voulez</h2>
 	
-        <form method="POST" action="??">
+        <form method="POST" action="createGroup.php">
             <textarea rows="4" cols="50" autofocus required >
 			 <?php 
 				$file = fopen($_SESSION["file"], "r+");
@@ -20,7 +20,7 @@ session_start();
 			echo($readfile);
 			 ?>
             </textarea>
-
+			<button type="submit" value="Submit">Submit</button>
         </form>
     </body>
 </html> 
