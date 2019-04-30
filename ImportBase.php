@@ -30,14 +30,12 @@ $file = filter_input(INPUT_GET, "file", FILTER_SANITIZE_STRING);
                 <div class="row">
                     <form action="" method="POST">
                         <input type="radio" name="group" value="groups">Groupes<br>
+                        <input class="col" type="text" name="number" placeholder="Nombre de groupes/membres">
                         <div class="w-100"></div>
-                        <input type="radio" name="group" value="memberspergroup">Membres par groupe<br>
+                        <input type="radio" name="group" value="memberspergroup" maxlength="4" size="4">Membres par groupe<br>
                     </form>
                 </div>
                 <div class="row">
-                    <input class="col" type="checkbox" name="options" value="advance">
-                    <label>options avancées</label>
-                    <div class="w-100"></div>
                     <button class="col" type="submit" value="Submit" class="btn btn-outline-dark">Envoyer</button>
                 </div>
                 <div class="row">
