@@ -1,6 +1,7 @@
 <?php
 $error = filter_input(INPUT_GET, "error", FILTER_SANITIZE_STRING);
 $file = filter_input(INPUT_GET, "file", FILTER_SANITIZE_STRING);
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -20,23 +21,26 @@ $file = filter_input(INPUT_GET, "file", FILTER_SANITIZE_STRING);
             echo "<span class='alert alert-danger'>L'extenssion du fichier que vous avez fournis ($file) n'est pas valide</span>";
         }
         ?>
+		
         <div id="interface" class="mx-auto" style="width: 500px; height: 200px;">
             <form method="POST" action="scripts/fileImport.php" enctype="multipart/form-data">
                 <div class="row">
                     <input type="hidden" name="MAX_FILE_SIZE" value="52428800" />
                     <label class="col">Importer un fichier</label>
-                    <input class="col" type="file" id="FichierCSV" name="CSV" accept=".csv">
+                    <input class="col" type="file" id="FichierCSV" name="CSV" accept=".csv" required>
                 </div>
-                <div class="row">
-                    <form action="" method="POST">
+                <div class="row">                    
                         <input type="radio" name="group" value="groups">Groupes<br>
                         <input class="col" type="text" name="number" placeholder="Nombre de groupes/membres">
                         <div class="w-100"></div>
-                        <input type="radio" name="group" value="memberspergroup" maxlength="4" size="4">Membres par groupe<br>
-                    </form>
+                        <input required type="radio" name="group" value="memberspergroup" maxlength="4" size="4">Membres par groupe<br>
                 </div>
                 <div class="row">
-                    <input type="checkbox" name="options" value="advance">Options Avancées
+                    <input type="checkbox" name="options" id="options" value="advance" onclick="hideShow()">Options Avancées
+                    
+                </div>
+                <div class="row">
+                    <div id="advanceDisplay"></div>
                 </div>
                 <div class="row">
                     <button class="col" type="submit" value="Submit" class="btn btn-outline-dark">Envoyer</button>
@@ -46,6 +50,7 @@ $file = filter_input(INPUT_GET, "file", FILTER_SANITIZE_STRING);
                 </div>
             </form>
         </div>
+        <script src="script.js"></script>
     </div>
 </body>
 
