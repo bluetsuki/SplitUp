@@ -12,8 +12,8 @@ $file=$_FILES['CSV']['name'];
 
 $ext = explode('.',$file);
 
-if(!($ext[1]=="csv"||$ext[1]=="xls"||$ext[1]=="xlsx")){
-    header("Location:../ImportBase.php?error=ext&file=$ext");
+if($ext[1]!="csv"){
+    header("Location:../ImportBase.php?error=ext&file=$ext[1]");
     exit();
 }
 
