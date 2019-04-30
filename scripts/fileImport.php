@@ -26,6 +26,6 @@ $fileName = md5(uniqid(rand(), true));
 $filePath="../files/".$fileName.".".$ext[1];
 $result=move_uploaded_file($_FILES['CSV']['tmp_name'], $filePath);
 
-$_SESSION["file"]=$filepath;
+$_SESSION["file"]=$filePath;
 
-header("Location: addUser.php")
+header("Location: addUser.php");
