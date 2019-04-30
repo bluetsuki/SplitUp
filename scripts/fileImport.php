@@ -2,6 +2,12 @@
 session_start();
 var_dump($_FILES);
 
+$settings = filter_input(INPUT_POST, "group", FILTER_SANITIZE_GROUP);
+$number = filter_input(INPUT_POST, "number", FILTER_SANITIZE_GROUP);
+
+$_SESSION["settings"]=$settings;
+$_SESSION["number"]=$number;
+
 $_FILES['CSV']['name'];
 $_FILES['CSV']['type'];
 $_FILES['CSV']['size'];
@@ -15,6 +21,14 @@ $ext = explode('.',$file);
 if($ext[1]!="csv"){
     header("Location:../ImportBase.php?error=ext&file=$ext[1]");
     exit();
+}
+
+$file = fopen($file, "r+");
+$readfile=file_get_contents($file);
+$numberUser=explode(";", $readfile);
+
+if($number > count($numberUser)){
+     header("Location:../ImportBase.php?error=number");
 }
 
 $lengthFileName=count($ext);

@@ -19,6 +19,8 @@ $file = filter_input(INPUT_GET, "file", FILTER_SANITIZE_STRING);
         <?php
         if ($error == "ext") {
             echo "<span class='alert alert-danger'>L'extenssion du fichier que vous avez fournis ($file) n'est pas valide</span>";
+        }elseif($error == "number"){
+            echo "<span class='alert alert-danger'>Le nombre d'utilisateurs n'est pas suffisant pour créer des groupes avec vos paramètres</span>";
         }
         ?>
 		
