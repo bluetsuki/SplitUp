@@ -40,6 +40,9 @@ $file = filter_input(INPUT_GET, "file", FILTER_SANITIZE_STRING);
                     <div class="w-100"></div>
                     <button class="col" type="submit" value="Submit" class="btn btn-outline-dark">Envoyer</button>
                 </div>
+                <div class="row">
+                    <a href="index.php"><button class="btn btn-dark">Home</button></a>
+                </div>
             </form>
         </div>
     </div>

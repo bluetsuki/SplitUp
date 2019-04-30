@@ -11,11 +11,12 @@
 <body>
     <div class="container">
         <h2>Ecrivez les noms des personnes que vous voulez (avec des points virgules)</h2>
-        <form method="POST" action="??">
-            <textarea rows="4" cols="50" autofocus required>
-
-            </textarea>
-            <button type="submit" value="Submit">Submit</button>
+        <form method="POST" action="createGroup.php">
+            <textarea rows="4" cols="50" autofocus required></textarea>
+            <input type="submit" value="Envoyer">
+            <div class="row">
+                <a href="index.php"><button type="button" class="btn btn-dark">Home</button></a>
+            </div>
         </form>
     </div>
 </body>
