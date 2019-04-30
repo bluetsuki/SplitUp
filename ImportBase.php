@@ -36,6 +36,9 @@ $file = filter_input(INPUT_GET, "file", FILTER_SANITIZE_STRING);
                     </form>
                 </div>
                 <div class="row">
+                    <input type="checkbox" name="options" value="advance">Options Avancées
+                </div>
+                <div class="row">
                     <button class="col" type="submit" value="Submit" class="btn btn-outline-dark">Envoyer</button>
                 </div>
                 <div class="row">
