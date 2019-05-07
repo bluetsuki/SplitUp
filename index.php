@@ -16,8 +16,8 @@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Login</button>
-                <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Register</button>
+                <a href=""><button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Login</button></a>
+                <a href="register.php"><button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Register</button></a>
             </nav>
         </div>
         <div class="row row justify-content-center" id="index">
