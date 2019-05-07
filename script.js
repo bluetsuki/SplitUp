@@ -14,11 +14,11 @@ function addGroupe() {
         var div = document.createElement("div");
         var label = document.createElement("label");
         var input = document.createElement("input");
-        div.appendChild(label);
-        div.appendChild(input);
         div.class = 'row';
         label.innerHTML = 'Groupe ' + i;
-        input.type = 'text';
+        input.type = 'number';
+        div.appendChild(label);
+        div.appendChild(input);
         document.getElementById('advanceDisplay').appendChild(div);
     }
 }

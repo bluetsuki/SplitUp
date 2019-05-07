@@ -22,7 +22,7 @@ $error = filter_input(INPUT_GET, "error", FILTER_SANITIZE_STRING);
             <textarea rows="4" cols="50" name="users" autofocus required >
 			 <?php 
                 if($error="number"){
-                    echo $_SESSION["users"]
+                    echo $_SESSION["users"];
                 }else{
 				$file = fopen($_SESSION["file"], "r+");
 				$readfile=file_get_contents($_SESSION["file"]);
