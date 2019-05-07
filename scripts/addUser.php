@@ -21,8 +21,8 @@ $error = filter_input(INPUT_GET, "error", FILTER_SANITIZE_STRING);
         <form method="POST" action="createGroup.php">
             <textarea rows="4" cols="50" name="users" autofocus required >
 			 <?php 
-                if($error="number"){
-                    echo $_SESSION["users"];
+                if($error=="number"){
+                    echo "ERREUR";
                 }else{
 				$file = fopen($_SESSION["file"], "r+");
 				$readfile=file_get_contents($_SESSION["file"]);
