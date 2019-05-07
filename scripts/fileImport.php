@@ -3,7 +3,7 @@ session_start();
 var_dump($_FILES);
 
 $settings = filter_input(INPUT_POST, "group", FILTER_SANITIZE_GROUP);
-$number = filter_input(INPUT_POST, "number", FILTER_SANITIZE_GROUP);
+$number = filter_input(INPUT_POST, "number", FILTER_SANITIZE_NUMBER_INT);
 
 $_SESSION["settings"]=$settings;
 $_SESSION["number"]=$number;

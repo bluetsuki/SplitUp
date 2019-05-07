@@ -11,6 +11,11 @@ $error = filter_input(INPUT_GET, "error", FILTER_SANITIZE_STRING);
         <style> textarea{ resize:none;}</style>
     </head>
     <body>
+        
+        <?php
+				$file = fopen($_SESSION["file"], "r+");
+				$readfile=file_get_contents($_SESSION["file"]);
+        ?>
         <?php
         if($error == "number"){
             echo "<span class='alert alert-danger'>Le nombre d'utilisateurs n'est pas suffisant pour créer des groupes avec vos paramètres</span>";
@@ -19,16 +24,7 @@ $error = filter_input(INPUT_GET, "error", FILTER_SANITIZE_STRING);
         <h2>Ajouter des personnes si vous voulez</h2>
 	
         <form method="POST" action="createGroup.php">
-            <textarea rows="4" cols="50" name="users" autofocus required >
-			 <?php 
-                if($error=="number"){
-                    echo "ERREUR";
-                }else{
-				$file = fopen($_SESSION["file"], "r+");
-				$readfile=file_get_contents($_SESSION["file"]);
-			     echo($readfile);
-                }
-			 ?>
+            <textarea rows="4" cols="50" name="users" autofocus required ><?= $readfile ?>
             </textarea>
 			<button type="submit" value="Submit">Submit</button>
         </form>
