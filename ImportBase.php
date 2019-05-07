@@ -50,7 +50,7 @@ $file = filter_input(INPUT_GET, "file", FILTER_SANITIZE_STRING);
                 <div class="row">
                     <a href="index.php"><button class="btn btn-dark" type="button">Home</button></a>
                 </div>
-            </form>
+            </form> 
         </div>
         <script src="script.js"></script>
     </div>
