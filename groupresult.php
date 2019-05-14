@@ -6,7 +6,7 @@ $groups=$_SESSION["groups"];
 <html>
 
 <head>
-    <title>Slip Up - Resultat</title>
+    <title>split Up - Resultat</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/bootstrap.css">

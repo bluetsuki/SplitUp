@@ -7,7 +7,7 @@ $file = filter_input(INPUT_GET, "file", FILTER_SANITIZE_STRING);
 <html>
 
 <head>
-    <title>Slip Up - Import</title>
+    <title>split Up - Import</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/bootstrap.css">
