@@ -20,10 +20,10 @@ $groups=$_SESSION["groups"];
             foreach($groups as $key => $value){
                 echo '<table> <thead> <tr> <th colspan="2"> Groupe ';
                 echo $key+1;
-                echo '<th><a href="scripts/editgroup.php?deletegrp='.$key.'"><button>Supprimer le groupe</button></a></th> </tr> </thead> <tbody> '; 
+                echo '<th><a href="scripts/editgroup.php?deletegrp='.$key.'"><button class="btn btn-primary">Supprimer le groupe</button></a></th> </tr> </thead> <tbody> '; 
                 foreach($value as $id => $membre){
                     echo '<tr><td>';
-                    echo $id+1 .'</td><td>'.$membre.'</td><td><a href="scripts/editgroup.php?moveuser=true&userid='.$id.'&basegrp='.$key.'"><button>Déplacer dans le groupe </button></a>';
+                    echo $id+1 .'</td><td>'.$membre.'</td><td><a href="scripts/editgroup.php?moveuser=true&userid='.$id.'&basegrp='.$key.'"><button class="btn btn-primary">Déplacer dans le groupe </button></a>';
                     echo '<select>';
                     foreach($groups as $i => $v){
                         echo '<option>';
