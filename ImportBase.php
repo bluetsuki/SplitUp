@@ -32,10 +32,9 @@ $file = filter_input(INPUT_GET, "file", FILTER_SANITIZE_STRING);
                     <input class="col" type="file" id="FichierCSV" name="CSV" accept=".csv" required>
                 </div>
                 <div class="row">                    
-                        <input type="radio" name="group" value="groups">Groupes<br>
-                        <input class="col" type="text" name="number" placeholder="Nombre de groupes/membres">
-                        <div class="w-100"></div>
-                        <input required type="radio" name="group" value="memberspergroup" maxlength="4" size="4">Membres par groupe<br>
+                    <label for="groups"><input type="radio" name="group"  id="groups" value="groups" required>Groupes<br></label>
+                    <label for="memberspergroup"><input type="radio" name="group" id="memberspergroup" value="memberspergroup">Membres par groupe<br></label>
+                    <input class="col" type="text" name="number" placeholder="Nombre de groupes/membres"><br/>
                 </div>
                 <div class="row">
                     <input type="checkbox" name="options" id="options" value="advance" onclick="hideShow()">Options Avancées
