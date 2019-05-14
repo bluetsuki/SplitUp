@@ -1,0 +1,42 @@
+<?php
+session_start();
+$groups=$_SESSION["groups"];
+?>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Slip Up - Resultat</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Groupes crées selon vos paramètres</h2>
+            
+        <?php
+            foreach($groups as $key => $value){
+                echo '<table> <thead> <tr> <th colspan="2"> Groupe ';
+                echo $key+1;
+                echo '<th><a href="scripts/editgroup.php?deletegrp='.$key.'"><button>Supprimer le groupe</button></a></th> </tr> </thead> <tbody> '; 
+                foreach($value as $id => $membre){
+                    echo '<tr><td>';
+                    echo $id+1 .'</td><td>'.$membre.'</td><td><a href="scripts/editgroup.php?moveuser=true&userid='.$id.'&basegrp='.$key.'"><button>Déplacer dans le groupe </button></a>';
+                    echo '<select>';
+                    foreach($groups as $i => $v){
+                        echo '<option>';
+                        echo $i+1 .'</value>';
+                    }
+                    echo '</select></td></tr>';
+                }
+                echo '</tbody></table><br/>';
+            }
+        ?>
+            <a href="scripts/createGroup.php?remake=true"><button>Refaire les groupes</button></a>
+        </div>
+    </div>
+</body>
+
+</html>

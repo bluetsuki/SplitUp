@@ -1,17 +1,23 @@
 <?php
 session_start();
 
-$users = filter_input(INPUT_POST, "users", FILTER_SANITIZE_STRING);
+$remake = filter_input(INPUT_GET, "remake", FILTER_SANITIZE_STRING);
+
+if(!$remake){
+    $users = filter_input(INPUT_POST, "users", FILTER_SANITIZE_STRING);
+    $_SESSION["users"]=$users;
+}elseif($remake){
+    $users=$_SESSION["users"];
+}
+
 $settings = $_SESSION["settings"];
 $number = $_SESSION["number"];
 $groups = array();
-
-$_SESSION["users"]=$users;
 $tempArray=array();
 $tabUsers=explode(";", $users);
-echo "<pre>";
-if(count($tabUsers) > $number){
-    if($settings="groups"){
+
+if(count($tabUsers) >= $number){
+    if($settings=="groups"){
             
         $nbUser = floor(count($tabUsers)/$number);
         $userSupp = count($tabUsers) % $number;
@@ -23,7 +29,6 @@ if(count($tabUsers) > $number){
             for($j=0;$j<$nbUser;$j++){
                 
                 $rnd = rand(0, count($tabUsers)-1);
-                echo $tabUsers[$rnd]."<br/>";
                 array_push($groups[$i], $tabUsers[$rnd]);
                 
                 unset($tabUsers[$rnd]);
@@ -32,15 +37,58 @@ if(count($tabUsers) > $number){
                     array_push($tempArray,$value );
                 }
                 $tabUsers=$tempArray;
-                var_dump($tempArray);
-                echo "<br/>";
             }
         }
         
-        var_dump($groups);
-    }else{
+        for($i=0;$i<$userSupp;$i++){                
+            $rnd = rand(0, count($tabUsers)-1);
+            array_push($groups[$i], $tabUsers[$rnd]);
+            
+            unset($tabUsers[$rnd]);
+                $tempArray=array();
+                foreach($tabUsers as $value){
+                    array_push($tempArray,$value );
+                }
+                $tabUsers=$tempArray;
+        }
+        
+    }elseif($settings=="memberspergroup"){
+        $nbGroups = floor(count($tabUsers)/$number);
+        $userSupp = count($tabUsers) % $number;
+                
+        for($i=0;$i<$nbGroups;$i++){
+            
+            $groups[$i]=array();
+            
+            for($j=0;$j<$number;$j++){
+                
+                $rnd = rand(0, count($tabUsers)-1);
+                array_push($groups[$i], $tabUsers[$rnd]);
+                
+                unset($tabUsers[$rnd]);
+                $tempArray=array();
+                foreach($tabUsers as $value){
+                    array_push($tempArray,$value );
+                }
+                $tabUsers=$tempArray;
+            }
+        }
+        
+        for($i=0;$i<$userSupp;$i++){                
+            $rnd = rand(0, count($tabUsers)-1);
+            array_push($groups[$i], $tabUsers[$rnd]);
+            
+            unset($tabUsers[$rnd]);
+                $tempArray=array();
+                foreach($tabUsers as $value){
+                    array_push($tempArray,$value );
+                }
+                $tabUsers=$tempArray;
+        }
         
     }
+    $_SESSION["groups"]=$groups;
+    header("Location: ../groupresult.php");
 }else{
     header("Location: addUser.php?error=number");
 }
