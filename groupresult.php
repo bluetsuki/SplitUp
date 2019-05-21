@@ -29,7 +29,7 @@ $groups = $_SESSION["groups"];
                     echo '<option>';
                     echo $i + 1 . '</value>';
                 }
-                echo '</select></td></form></tr>';
+                echo '</select><a href="scripts/deleteUser.php?group='.$key.'&studentId='.$id.'&studentName='.$membre.'"><button class="btn btn-danger" type="button">X</button></a></td></form></tr>';
             }
             echo '</tbody></table><br/>';
         }
