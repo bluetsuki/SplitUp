@@ -8,9 +8,15 @@ $error = filter_input(INPUT_GET, "error", FILTER_SANITIZE_STRING);
         <title>Aujouter un élève ?</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
         <style> textarea{ resize:none;}</style>
     </head>
     <body>
+	<div class="container">
+	<?php
+	include_once('../nav.php');
+	?>
         
         <?php
 				$file = fopen($_SESSION["file"], "r+");
@@ -26,7 +32,8 @@ $error = filter_input(INPUT_GET, "error", FILTER_SANITIZE_STRING);
         <form method="POST" action="createGroup.php">
             <textarea rows="4" cols="50" name="users" autofocus required ><?= $readfile ?>
             </textarea>
-			<button type="submit" value="Submit">Submit</button>
+			<button class="btn btn-dark" type="submit" value="Submit">Submit</button>
         </form>
+		<div>
     </body>
 </html> 

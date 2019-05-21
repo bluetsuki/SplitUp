@@ -14,6 +14,11 @@ $groups = $_SESSION["groups"];
 
 <body>
     <div class="container">
+	<div>
+            <?php
+	include_once('nav.php');
+	?>
+        </div>
         <h2>Groupes crées selon vos paramètres</h2>
 
         <?php
@@ -33,9 +38,8 @@ $groups = $_SESSION["groups"];
             }
             echo '</tbody></table><br/>';
         }
-        ?>
-        <a href="scripts/createGroup.php?remake=true"><button class="btn btn-success">Refaire les groupes</button></a>
-    </div>
+        ?><a href="scripts/createGroup.php?remake=true"><button class="btn btn-dark">Refaire les groupes</button></a>
+        </div>
     </div>
 </body>
 

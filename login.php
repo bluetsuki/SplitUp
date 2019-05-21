@@ -2,6 +2,7 @@
 include('scripts/scriptlogin.php');
 $err = FILTER_INPUT(INPUT_GET, 'error', FILTER_SANITIZE_STRING);
 $username = FILTER_INPUT(INPUT_GET, 'username', FILTER_SANITIZE_STRING);
+
 ?>
 
 <!DOCTYPE html>
@@ -9,7 +10,7 @@ $username = FILTER_INPUT(INPUT_GET, 'username', FILTER_SANITIZE_STRING);
 
 <head>
 </head>
-<meta charset="utf-8" />
+<meta charset="utf-8">
 <title>Login page</title>
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/bootstrap.css">
