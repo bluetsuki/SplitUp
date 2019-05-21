@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Slip Up - Input Name</title>
+    <title>split Up - Input Name</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/bootstrap.css">

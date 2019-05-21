@@ -18,23 +18,23 @@ $groups=$_SESSION["groups"];
             
         <?php
             foreach($groups as $key => $value){
-                echo '<table> <thead> <tr> <th colspan="2"> Groupe ';
+                echo '<table class="table"> <thead class="thead-dark"> <tr> <th colspan="2"> Groupe ';
                 echo $key+1;
                 echo '<th><a href="scripts/editgroup.php?deletegrp='.$key.'"><button class="btn btn-primary">Supprimer le groupe</button></a></th> </tr> </thead> <tbody> '; 
                 foreach($value as $id => $membre){
-                    echo '<tr><td>';
+                    echo '<tr><form method="post" action="scripts/editgroup.php?moveuser=true&userid='.$id.'&basegrp='.$key.'"><td>';
                     echo $id+1 .'</td><td>'.$membre.'</td><td><a href="scripts/editgroup.php?moveuser=true&userid='.$id.'&basegrp='.$key.'"><button class="btn btn-primary">Déplacer dans le groupe </button></a>';
                     echo '<select>';
                     foreach($groups as $i => $v){
                         echo '<option>';
                         echo $i+1 .'</value>';
                     }
-                    echo '</select></td></tr>';
+                    echo '</select></td></form></tr>';
                 }
                 echo '</tbody></table><br/>';
             }
         ?>
-            <a href="scripts/createGroup.php?remake=true"><button>Refaire les groupes</button></a>
+            <a href="scripts/createGroup.php?remake=true"><button class="btn btn-success">Refaire les groupes</button></a>
         </div>
     </div>
 </body>
