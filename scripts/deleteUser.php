@@ -7,5 +7,11 @@ $studentName = FILTER_INPUT(INPUT_GET, 'studentName', FILTER_SANITIZE_STRING);
 
 var_dump( $_SESSION['groups']);
 var_dump( $_SESSION['users']);
+
+echo $idGroup . '<br>';
+echo $studentId . '<br>';
+echo $studentName . '<br>';
 // $_SESSION['groups']
 // $_SESSION['users'] ceci n'est pas un tableau
+
+array_slice( $_SESSION['groups'][$idGroup][$studentId], 0);
