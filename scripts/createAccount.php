@@ -1,7 +1,6 @@
 <?php
 include('dataBase.php');
 $btn = FILTER_INPUT(INPUT_POST, 'submit');
-echo $btn;
 if(isset($btn)){
     $surname = FILTER_INPUT(INPUT_POST, 'surname', FILTER_SANITIZE_STRING);
     $name = FILTER_INPUT(INPUT_POST, 'name', FILTER_SANITIZE_STRING);

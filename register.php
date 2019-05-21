@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>split Up - Register</title>
+    <title>Split Up - Register</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/bootstrap.css">

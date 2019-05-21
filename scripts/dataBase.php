@@ -1,4 +1,5 @@
 <?php
+session_start();
 DEFINE('DB_HOST', 'localhost');
 DEFINE('DB_NAME', 'slipupdb');
 DEFINE('DB_USER', 'root');
@@ -34,10 +35,17 @@ function insertProfesseur($surname, $name, $username, $password)
 function checkUser($user, $pass)
 {
     $check = getConnexion();
-    $req = $check->prepare("SELECT username, mdp FROM professeurs WHERE username = '$user'");
+    $req = $check->prepare("SELECT username, mdp FROM professeurs WHERE username = :user");
+    $req->bindParam("user", $user, PDO:: PARAM_STR);
+    $req-> execute();
     $res = $req->fetchAll(PDO::FETCH_ASSOC);
-    var_dump($res);
-    foreach($res as $key => $value){
-        echo $value;
+    if(password_verify($pass, $res[0]['mdp'])){
+        $_SESSION['log'] = $res[0]['username'];
+        $error =  false;
+        header( 'Location: ../edsa-SlipUp');
+        exit;
+    }else{
+        $error = true;
+        header("Location: ?error=$error&username=$user");
     }
 }
