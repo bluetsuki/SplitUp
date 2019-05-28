@@ -47,5 +47,14 @@ function checkUser($user, $pass)
     }else{
         $error = true;
         header("Location: ?error=$error&username=$user");
+        exit;
     }
+}
+
+function deleteGroupBoy($nameGroup)
+{
+    $del = getConnexion();
+    $req = $del->prepare("DELETE FROM boygroups WHERE nameBoyGroup = :nameGroup");
+    $req->bindParam(":nameGroup", $nameGroup, PDO::PARAM_STR);
+    $req->execute();
 }
