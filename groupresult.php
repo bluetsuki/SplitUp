@@ -41,6 +41,7 @@ $groups = $_SESSION["groups"];
                 echo "<input type='hidden' value='true' name='moveUser'>";
                 echo $id + 1 . '</td><td>' . $membre . '</td><td><input type="submit" value="Déplacer dans le groupe" name="move" class="btn btn-primary">';
                 echo '<select name="destGrp">';
+
                 foreach ($groups as $i => $v) {
                     if($i!=$key){
                         echo "<option value='$i'>";
