@@ -17,4 +17,4 @@ array_splice($groups[$idGroup], $studentId, 1);
 $_SESSION['groups'] = $groups;
 $_SESSION['users'] = $txtUser;
 echo $txtUser;
-header("Location: ../groupresult.php");
+header("Location: ../groupResult.php");

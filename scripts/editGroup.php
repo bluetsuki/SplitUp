@@ -16,13 +16,13 @@ if($moveUser){
     array_splice($groups[$baseGrp], $userId, 1);
     array_push($groups[$destGrp], $user);
     $_SESSION['groups'] = $groups;
-    header("Location: ../groupresult.php");
+    header("Location: ../groupResult.php");
 }elseif($delGrp){
     if(count($groups[$idGrp])==0){
         array_splice($groups, $idGrp, 1);
         $_SESSION['groups'] = $groups;
-        header("Location: ../groupresult.php");
+        header("Location: ../groupResult.php");
     }else{
-        header("Location: ../groupresult.php?error=notEmpty");        
+        header("Location: ../groupResult.php?error=notEmpty");        
     }
 }

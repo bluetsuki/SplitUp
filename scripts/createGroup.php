@@ -98,7 +98,7 @@ if(count($tabUsers) >= $number){
         
     }
     $_SESSION["groups"]=$groups;
-    header("Location: ../groupresult.php");
+    header("Location: ../groupResult.php");
 }else{
     header("Location: addUser.php?error=number");
 }
