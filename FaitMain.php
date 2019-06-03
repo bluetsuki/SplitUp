@@ -21,7 +21,7 @@ $file = filter_input(INPUT_GET, "file", FILTER_SANITIZE_STRING);
 	?>
         </div>
         <h2>Ecrivez les noms des personnes que vous voulez (avec des points virgules)</h2>
-        <form method="POST" action="createGroup.php">
+        <form method="POST" action="scripts/createGroup.php">
 		<?php
         if ($error == "ext") {
             echo "<span class='alert alert-danger'>L'extenssion du fichier que vous avez fournis ($file) n'est pas valide</span>";
@@ -41,7 +41,7 @@ $file = filter_input(INPUT_GET, "file", FILTER_SANITIZE_STRING);
                     <input type="checkbox" name="options" id="options" value="advance" onclick="hideShow()">Options Avancées
                     
                 </div>
-				<textarea rows="4" cols="50" autofocus required></textarea>
+				<textarea rows="4" cols="50" name="users" autofocus required></textarea>
                 <div style="margin-left:1px;" class="row">
                     <div id="advanceDisplay"></div>
                 </div>

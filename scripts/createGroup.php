@@ -3,22 +3,28 @@ session_start();
 
 $remake = filter_input(INPUT_GET, "remake", FILTER_SANITIZE_STRING);
 
+
 if(!$remake){
     $users = filter_input(INPUT_POST, "users", FILTER_SANITIZE_STRING);
+    $number = filter_input(INPUT_POST, "number", FILTER_SANITIZE_NUMBER_INT);
+    $settings = filter_input(INPUT_POST, "group", FILTER_SANITIZE_STRING);
     $_SESSION["users"]=$users;
 }elseif($remake){
     $users=$_SESSION["users"];
 }
-
-$settings = $_SESSION["settings"];
-$number = $_SESSION["number"];
+if($number==''){
+    $settings = $_SESSION["settings"];
+    $number = $_SESSION["number"];
+}else{
+    $_SESSION["settings"] = $settings;
+    $_SESSION["number"] = $number;
+}
 $groups = array();
 $tempArray=array();
 $tabUsers=explode(";", $users);
 
 if(count($tabUsers) >= $number){
     if($settings=="groups"){
-            
         $nbUser = floor(count($tabUsers)/$number);
         $userSupp = count($tabUsers) % $number;
                 
@@ -74,9 +80,13 @@ if(count($tabUsers) >= $number){
             }
         }
         
-        for($i=0;$i<$userSupp;$i++){                
+        for($i=0;$i<$userSupp;$i++){  
             $rnd = rand(0, count($tabUsers)-1);
+            if($i>=count($groups)){
+            array_push($groups[$i-count($groups)], $tabUsers[$rnd]);    
+            }else{
             array_push($groups[$i], $tabUsers[$rnd]);
+            }
             
             unset($tabUsers[$rnd]);
                 $tempArray=array();
