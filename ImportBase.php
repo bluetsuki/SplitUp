@@ -37,12 +37,14 @@ $file = filter_input(INPUT_GET, "file", FILTER_SANITIZE_STRING);
                 <div style="margin-left:1px;"class="row">                    
                     <label for="groups"><input type="radio" name="group"  id="groups" value="groups" required>Groupes<br></label>
                     <label for="memberspergroup"><input style="margin-left:5px;"type="radio" name="group" id="memberspergroup" value="memberspergroup">Membres par groupe<br></label>
-                    <input required class="col" type="text" name="number" placeholder="Nombre de groupes/membres" style="margin-left:5px;"><br/>
+                    <input required class="col" type="text" name="number" id="number" placeholder="Nombre de groupes/membres" style="margin-left:5px;"><br/>
                 </div>
+<!--
                 <div style="margin-left:1px;" class="row">
-                    <input type="checkbox" name="options" id="options" value="advance" onclick="hideShow()">Options Avancées
+                    <input type="checkbox" name="options" id="options" value="advance" onclick="hideShow()"><label for='options'>Options Avancées</label>
                     
                 </div>
+-->
                 <div style="margin-left:1px;" class="row">
                     <div id="advanceDisplay"></div>
                 </div>
