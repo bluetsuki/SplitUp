@@ -14,10 +14,16 @@ $group = FILTER_INPUT(INPUT_GET, 'group', FILTER_SANITIZE_NUMBER_INT);
 <body>
     <div class="container">
         <form action="scripts/forgotUser.php" method="POST">
-            <label>Enter le nom de l'élève à ajouter</label>
-            <input type="text" name="addStudent">
-            <input type="hidden" name="group" value="<?=$group?>">
-            <input type="submit">
+		<div class="form-group">
+            <h2><label>Enter le nom de l'élève à ajouter</label></h2>	
+            <input class="form-control" type="text" name="addStudent">
+			</div>
+			<div class="form-group">
+            <input class="form-control" type="hidden" name="group" value="<?=$group?>">
+			</div>
+			<div class="form-group">
+            <input class="btn btn-dark" type="submit">
+			</div>
         </form>
     </div>
 </body>
