@@ -25,9 +25,6 @@ $groups = $_SESSION["groups"];
             <div class="col-9">
                 <h2>Groupes crées selon vos paramètres</h2>
             </div>
-            <div>
-                <a href="saveGrps.php"><button class="btn btn-success">Enregistrer les groupes</button></a>
-            </div>
         </div>
         <?php
         foreach ($groups as $key => $value) {
