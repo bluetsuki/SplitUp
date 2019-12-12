@@ -5,7 +5,7 @@ session_start();
 <html>
 
 <head>
-    <title>Split Up</title>
+    <title>BONJOUR - FORK</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/bootstrap.css">
